@@ -12,7 +12,7 @@ Now you can replace this boilerplate::
 
 With a simple call::
 
-    >>> import env
+    import env
 
 ::
 

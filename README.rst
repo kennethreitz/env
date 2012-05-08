@@ -31,4 +31,4 @@ Installation
 
 Installation is easy with pip::
 
-    $ pip instal env
+    $ pip install env

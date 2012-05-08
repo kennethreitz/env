@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from os import environ
+from urlparse import urlparse as _urlparse
+
 
 def lower_dict(d):
     """Lower cases string keys in given dict."""
@@ -14,6 +16,20 @@ def lower_dict(d):
             _d[k] = v
 
     return _d
+
+
+def urlparse(d, keys=None):
+    """Returns a copy of the given dictionary with url values parsed."""
+
+    d = d.copy()
+
+    if keys is None:
+        keys = d.keys()
+
+    for key in keys:
+        d[key] = _urlparse(d[key])
+
+    return d
 
 
 def prefix(prefix):

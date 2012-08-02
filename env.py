@@ -63,6 +63,6 @@ def map(**kwargs):
     e = lower_dict(environ.copy())
 
     for k, v in kwargs.iteritems():
-        d[k.lower()] = e.get(v.lower())
+        d[k] = e.get(v.lower())
 
     return d

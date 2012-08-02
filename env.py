@@ -56,7 +56,7 @@ def prefix(prefix):
 
 def map(**kwargs):
     """Returns a dictionary of the given keyword arguments mapped to their
-    values from the environment, with input and output keys lower cased.
+    values from the environment, with input keys lower cased.
     """
 
     d = {}

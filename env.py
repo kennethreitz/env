@@ -48,7 +48,6 @@ def prefix(prefix):
                 k = k[len(prefix):]
                 d[k] = v
         except AttributeError:
-            print k
             pass
 
     return d

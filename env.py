@@ -55,13 +55,13 @@ def prefix(prefix):
 
 def map(**kwargs):
     """Returns a dictionary of the given keyword arguments mapped to their
-    values from the environment.
+    values from the environment, with input keys lower cased.
     """
 
     d = {}
     e = lower_dict(environ.copy())
 
     for k, v in kwargs.iteritems():
-        d[k] = e.get(v)
+        d[k] = e.get(v.lower())
 
     return d

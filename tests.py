@@ -1,4 +1,7 @@
-import env, nose
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import env
 from os import environ
 from urlparse import urlparse as _urlparse
 

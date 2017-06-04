@@ -6,6 +6,7 @@ try:
 except ImportError:
     from urlparse import urlparse as _urlparse
 
+
 def lower_dict(d):
     """Lower cases string keys in given dict."""
 

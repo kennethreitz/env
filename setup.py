@@ -34,7 +34,7 @@ from setuptools import setup
 
 setup(
     name='env',
-    version='0.1.0',
+    version='0.1.1',
     url='https://github.com/kennethreitz/env',
     license='BSD',
     author='Kenneth Reitz',

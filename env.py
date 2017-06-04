@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from os import environ
-from urlparse import urlparse as _urlparse
-
+try:
+    from urllib.parse import urlparse as _urlparse
+except ImportError:
+    from urlparse import urlparse as _urlparse
 
 def lower_dict(d):
     """Lower cases string keys in given dict."""

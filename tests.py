@@ -3,7 +3,11 @@
 
 import env
 from os import environ
-from urlparse import urlparse as _urlparse
+
+try:
+    from urlparse import urlparse as _urlparse
+except ImportError:
+    from urllib.parse import urlparse as _urlparse
 
 searchprefix = 'env1'
 matchdata = {'env1TESTS1': 'aA', 'ENV1tests2': 'bB', 'env1tests3': 'cC'}

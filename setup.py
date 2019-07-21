@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-env.py
+Setup file for env package.
+
 ~~~~~~
 
 Mapping environment variables can be a bit of a pain.
@@ -31,11 +32,37 @@ Or have a bit more control::
 """
 
 from setuptools import setup
+from setuptools.command.test import test as TestCommand
+import sys
+
+
+class PyTest(TestCommand):
+    """pytest command runner."""
+
+    user_options = [('pytest-args=', 'a', "Arguments to pass into py.test")]
+
+    def initialize_options(self):
+        """Initialize the options for pytest."""
+        TestCommand.initialize_options(self)
+
+    def finalize_options(self):
+        """Finalize the options for pytest."""
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        """Run the pytest runner."""
+        import pytest
+
+        errno = pytest.main([])
+        sys.exit(errno)
+
 
 setup(
     name='env',
     version='0.1.1',
-    url='https://github.com/kennethreitz/env',
+    url='https://github.com/MasterOdin/env',
     license='BSD',
     author='Kenneth Reitz',
     author_email='me@kennethreitz.com',
@@ -45,6 +72,8 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
+    tests_require=['pytest', 'pytest-cov'],
+    cmdclass={'test': PyTest},
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
@@ -57,6 +86,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]

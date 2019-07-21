@@ -15,6 +15,12 @@ matrix:
     - python: 3.8-dev
     - python: nightly
 
-script: make test
 install:
-  - pip install nose
+  - pip install pytest pytest-cov flake8 flake8-bugbear python-coveralls
+
+script:
+  - flake8
+  - python3 setup.py test
+
+after_success:
+  - coveralls

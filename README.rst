@@ -1,8 +1,8 @@
 Env: Environment Variables for Humans
 =====================================
 
-.. image:: https://secure.travis-ci.org/kennethreitz/env.png?branch=master
-        :target: https://secure.travis-ci.org/kennethreitz/env
+.. image:: https://travis-ci.com/MasterOdin/env.svg?branch=master
+        :target: https://travis-ci.com/MasterOdin/env
 
 
 Mapping environment variables can be a bit of a pain.

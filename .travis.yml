@@ -16,7 +16,7 @@ matrix:
     - python: nightly
 
 install:
-  - pip install pytest pytest-cov flake8 python-coveralls
+  - pip install setuptools pytest pytest-cov flake8 python-coveralls
   - if [ $(python -c "import sys; sys.exit(1 if (sys.version_info >= (3, 5)) else 0)") -eq 1 ]; then pip install flake8-bugbear; fi
 
 script:

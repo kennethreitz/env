@@ -14,7 +14,7 @@ except ImportError:
 SEARCH_PREFIX = 'env1'
 MATCH_DATA = {'env1TESTS1': 'aA', 'ENV1tests2': 'bB', 'env1tests3': 'cC'}
 NO_MATCH_DATA = {'env2TESTS4': 'dD', 'ENV2tests5': 'eE', 'env2tests6': 'fF'}
-ALL_DATA = {**MATCH_DATA, **NO_MATCH_DATA}
+ALL_DATA = {k: v for d in [MATCH_DATA, NO_MATCH_DATA] for k, v in d.items()}
 
 
 def test_lower_dict():

@@ -1,9 +1,12 @@
 Env: Environment Variables for Humans
 =====================================
 
-.. image:: https://travis-ci.com/MasterOdin/env.svg?branch=master
-        :target: https://travis-ci.com/MasterOdin/env
-
+.. image:: https://travis-ci.org/MasterOdin/env.svg?branch=master
+    :target: https://travis-ci.org/MasterOdin/env
+    :alt: Build Status
+.. image:: https://coveralls.io/repos/github/MasterOdin/env/badge.svg?branch=master
+    :target: https://coveralls.io/github/MasterOdin/env?branch=master
+    :alt: Coverage Status
 
 Mapping environment variables can be a bit of a pain.
 
